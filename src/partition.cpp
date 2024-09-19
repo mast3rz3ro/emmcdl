@@ -429,7 +429,7 @@ int Partition::ProgramPartitionEntry(Protocol *proto, PartitionEntry pe, char *k
     // First check if the file is a sparse image then program via sparse
     SparseImage sparse;
     char imgfname[MAX_PATH];
-    const char* ptr = xmlFilename ? rindex(xmlFilename,'/'): NULL;
+    const char* ptr = xmlFilename ? strrchr(xmlFilename,'/'): NULL;
     if (ptr != NULL) {
        if (imgDir != NULL) {
            sprintf(imgfname, "%s/%s", imgDir, pe.filename);
@@ -546,7 +546,7 @@ int Partition::SimlockPartitionEntry(Protocol *proto, PartitionEntry pe, char *k
   }
 
   char imgfname[MAX_PATH];
-  const char* ptr = rindex(xmlFilename,'/');
+  const char* ptr = strrchr(xmlFilename,'/');
   if (ptr != NULL) {
     if (imgDir != NULL) {
       sprintf(imgfname, "%s/%s", imgDir, pe.filename);

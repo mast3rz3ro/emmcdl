@@ -20,3 +20,8 @@ config.h
 /depcomp
 /install-sh
 /missing
+config.guess
+config.h.in~
+config.sub
+configure~
+config.h.in
